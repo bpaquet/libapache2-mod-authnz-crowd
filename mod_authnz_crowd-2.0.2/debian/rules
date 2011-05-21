@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+
+config.status:
+	dh_testdir
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+		cp -f /usr/share/misc/config.sub config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+		cp -f /usr/share/misc/config.guess config.guess
+endif
+	autoreconf --install
+	./configure
+
+build: config.status
+	$(MAKE) 
+
+build-stamp:
+	dh_testdir
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	[ ! -f Makefile ] || $(MAKE) clean
+	find . -maxdepth 1 -type f | grep -v LICENSE | grep -v configure.ac | grep -v Makefile.am | xargs rm -f
+	find . -name '*.Plo' -delete
+	find . -name '.deps' -delete
+	find . -name 'Makefile' -delete
+	rm -f m4/*
+
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+		rm -f config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+		rm -f config.guess
+endif
+	dh_clean
+
+install:
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	dh_install
+	
+binary-indep:
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install
+

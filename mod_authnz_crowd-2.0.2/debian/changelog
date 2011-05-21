@@ -1,0 +1,6 @@
+libapache2-mod-authnz-crowd (2.0.2-1) unstable; urgency=low
+
+  * Initial release 
+
+ -- Bertrand Paquet <bpaquet@octo.com>  Sat, 21 May 2011 16:42:26 +0200
+

@@ -1,0 +1,27 @@
+Source: libapache2-mod-authnz-crowd
+Section: unknown
+Priority: extra
+Maintainer: Bertrand Paquet <bpaquet@octo.com>
+Build-Depends: cdbs,
+  debhelper (>= 7),
+  libtool,
+  libapr1-dev,
+  apache2-threaded-dev,
+  libsvn-dev,
+  libxml2-dev,
+  libcurl4-dev
+Standards-Version: 3.8.3
+Homepage: http://confluence.atlassian.com/display/CROWD/Installing+the+Crowd+Apache+Connector+on+Ubuntu+Linux
+
+Package: libapache2-mod-authnz-crowd
+Architecture: any
+Depends: ${shlibs:Depends},
+  ${misc:Depends},
+  apache2.2-common,
+  libapache2-svn,
+  libxml2,
+  libcurl3,
+  libapr1,
+  libsvn1
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

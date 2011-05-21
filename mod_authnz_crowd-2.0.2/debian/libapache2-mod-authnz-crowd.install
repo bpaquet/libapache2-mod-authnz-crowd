@@ -1,0 +1,2 @@
+src/.libs/mod_authnz_crowd.so* /usr/lib/apache2/modules
+debian/conf/* /etc/apache2/mods-available
