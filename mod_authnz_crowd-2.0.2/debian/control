@@ -1,7 +1,7 @@
 Source: libapache2-mod-authnz-crowd
-Section: unknown
+Section: web
 Priority: extra
-Maintainer: Bertrand Paquet <bpaquet@octo.com>
+Maintainer: Bertrand Paquet <bertrand.paquet@gmail.com>
 Build-Depends: cdbs,
   debhelper (>= 7),
   libtool,
