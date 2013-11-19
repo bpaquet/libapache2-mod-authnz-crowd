@@ -23,5 +23,6 @@ Depends: ${shlibs:Depends},
   libcurl3,
   libapr1,
   libsvn1
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Crowd connector for Apache
+See complete description here
+https://confluence.atlassian.com/display/CROWD/Installing+the+Crowd+Apache+Connector+on+Ubuntu+Linux
